@@ -1,22 +1,12 @@
-# This project is used to generate planes files
-# By leofansq
-#################################################################
-
 import make_planes as mp
 
-def main():
+# Path of the dataset, for KITTI is "/home/xxxxx/KITTI/training/"
+DATA_FILE_PATH = "./training/"
 
-    print("start")
+print ("Start", DATA_FILE_PATH)
 
-    # Specific project processing
-    #mp.lidar4to3()
-    #mp.cau_planes()
+# lidar4to3(input_file_path, output_file_path="./points/")
+mp.lidar4to3(DATA_FILE_PATH)
 
-    # KITTI Dataset processing
-    mp.lidar4to3_kitti()
-    mp.cau_planes_kitti()
-
-    pass
-
-if __name__ == '__main__':
-    main()
+# cal_planes(input_file_path="./points/", output_file_path="./planes/")
+mp.cal_planes()
